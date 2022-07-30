@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: #2c2c2e;" styleClass="loginPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.home_skrobanek.pre.flight.manager.controller.RouteController">
+   <children>
+      <AnchorPane layoutX="92.0" layoutY="31.0" prefHeight="212.0" prefWidth="900.0" style="-fx-background-color: #333335;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="60.0" text="Route-Finder" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="110.0" text="Departure:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="96.0" layoutY="107.0" prefHeight="24.0" prefWidth="66.0" promptText="EDDH" />
+            <Label layoutX="14.0" layoutY="140.0" text="Arrival:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="96.0" layoutY="137.0" prefHeight="24.0" prefWidth="66.0" promptText="EDDF" />
+            <Label layoutX="185.0" layoutY="110.0" text="Flightrule:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="262.0" layoutY="107.0" prefHeight="24.0" prefWidth="88.0" promptText="IFR" />
+            <Button layoutX="806.0" layoutY="171.0" mnemonicParsing="false" text="Search" />
+            <Label layoutX="188.0" layoutY="145.0" text="Cycle:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="262.0" layoutY="142.0" prefHeight="24.0" prefWidth="88.0" promptText="2207" />
+            <Label layoutX="380.0" layoutY="110.0" text="Aircraft:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="457.0" layoutY="107.0" prefHeight="24.0" prefWidth="88.0" promptText="A320" />
+            <Button layoutX="651.0" layoutY="171.0" mnemonicParsing="false" text="Create new Route" />
+            <Button fx:id="backButton" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBack" prefHeight="42.0" prefWidth="57.0" style="-fx-background-color: #333335;">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8-back-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <TableView layoutY="267.0" prefHeight="469.0" prefWidth="900.0" style="-fx-background-color: #2c2c2e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="300.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Dep" />
+          <TableColumn prefWidth="75.0" text="Arr" />
+            <TableColumn prefWidth="130.0" text="Database Cycle" />
+            <TableColumn prefWidth="130.0" text="Rating" />
+            <TableColumn prefWidth="130.0" text="Last flight" />
+            <TableColumn prefWidth="130.0" text="Description" />
+            <TableColumn prefWidth="183.0" text="Waypoints / Airways" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

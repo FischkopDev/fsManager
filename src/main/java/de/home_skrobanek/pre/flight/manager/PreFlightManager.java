@@ -1,22 +1,30 @@
 package de.home_skrobanek.pre.flight.manager;
 
-import de.home_skrobanek.pre.flight.manager.controller.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class PreFlightManager extends Application {
+
+    private static Stage stage;
+    private static Scene scene, routeScene;
+    private static Parent content, contentRoute;
+
     @Override
     public void start(Stage stage) throws Exception {
+        this.stage = stage;
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/FXML/main.fxml"));
-        Parent content = loader.load();
+        content = loader.load();
 
-        Scene scene = new Scene(content, 900, 500);
+        FXMLLoader loader2 = new FXMLLoader();
+        loader2.setLocation(getClass().getResource("/FXML/routefinder.fxml"));
+        contentRoute = loader2.load();
 
+        scene = new Scene(content, 900, 500);
+        routeScene = new Scene(contentRoute, 900, 500);
 
         //stage properties
         stage.setWidth(900);
@@ -29,5 +37,24 @@ public class PreFlightManager extends Application {
 
     public static void main(String[]args){
         launch(args);
+    }
+
+    public static void changeState(ProgramState state){
+        switch(state){
+            case MAIN_MENU:
+                stage.setScene(scene);
+                break;
+            case PILOT_STATS_MENU:
+                break;
+            case ROUTE_MENU:
+                stage.setScene(routeScene);
+                break;
+        }
+    }
+
+    public enum ProgramState {
+        MAIN_MENU,
+        ROUTE_MENU,
+        PILOT_STATS_MENU;
     }
 }

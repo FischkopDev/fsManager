@@ -2,6 +2,7 @@ package de.home_skrobanek.pre.flight.manager.menuobject;
 
 import de.home_skrobanek.pre.flight.manager.controller.MenuObjectController;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -30,6 +31,7 @@ public class MenuObject {
             list.add(pane);
             controller.title.setText(title);
             controller.description.setText(description);
+            //controller.icon.setImage(new Image(imgSrc));
             pane.setOnMouseClicked(event -> {
                 run.run();
             });
