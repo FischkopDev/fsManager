@@ -8,13 +8,17 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: #2c2c2e;" styleClass="loginPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.home_skrobanek.pre.flight.manager.controller.MainController">
     <children>
       <AnchorPane layoutX="76.0" layoutY="28.0" prefHeight="181.0" prefWidth="823.0" style="-fx-background-color: white; -fx-border-radius: 50;" AnchorPane.leftAnchor="76.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
          <children>
+            <ImageView fitHeight="160.0" fitWidth="349.0" layoutX="481.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="15.0">
+               <image>
+                  <Image url="@../icons/aircraft.png" />
+               </image>
+            </ImageView>
             <Label layoutX="52.0" layoutY="39.0" text="News and Updates">
                <font>
                   <Font name="System Bold" size="25.0" />
@@ -25,11 +29,6 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <ImageView fitHeight="158.0" fitWidth="263.0" layoutX="533.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="28.0">
-               <image>
-                  <Image url="@../icons/aircraft.png" />
-               </image>
-            </ImageView>
             <Button layoutX="52.0" layoutY="116.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="112.0" style="-fx-background-color: #48a828;" text="Read more" textFill="WHITE">
                <font>
                   <Font size="14.0" />
@@ -42,21 +41,21 @@
       </AnchorPane>
       <AnchorPane fx:id="contentPane" layoutX="210.0" layoutY="314.0" prefHeight="200.0" prefWidth="477.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="240.0">
          <children>
-            <Pane fx:id="headerPane" layoutX="14.0" layoutY="14.0" prefHeight="60.0" prefWidth="744.0" style="-fx-background-color: #404042; -fx-border-radius: 50;" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="14.0">
+            <AnchorPane fx:id="headerPane" layoutX="14.0" layoutY="14.0" prefHeight="60.0" prefWidth="744.0" style="-fx-background-color: #404042; -fx-border-radius: 50;" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="14.0">
                <children>
                   <ComboBox layoutX="14.0" layoutY="17.0" prefWidth="150.0" promptText="Tool-Category" style="-fx-background-color: #555558;" />
-                  <Button layoutX="507.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="73.0" style="-fx-background-color: #404042;" text="All" textFill="WHITE">
+                  <Button layoutX="507.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="73.0" style="-fx-background-color: #404042;" text="All" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="580.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #404042;" text="Route-Manager" textFill="WHITE">
+                  <Button layoutX="580.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #404042;" text="Route-Manager" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
                </children>
-            </Pane>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="76.0" prefHeight="50.0" prefWidth="824.0" style="-fx-background-color: #f4f4f4;" AnchorPane.leftAnchor="76.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

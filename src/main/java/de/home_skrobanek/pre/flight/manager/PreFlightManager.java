@@ -9,8 +9,8 @@ import javafx.stage.Stage;
 public class PreFlightManager extends Application {
 
     private static Stage stage;
-    private static Scene scene, routeScene;
-    private static Parent content, contentRoute;
+    private static Scene scene, routeScene, routeCreatorScene;
+    private static Parent content, contentRoute, routeCreator;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -23,8 +23,13 @@ public class PreFlightManager extends Application {
         loader2.setLocation(getClass().getResource("/FXML/routefinder.fxml"));
         contentRoute = loader2.load();
 
+        FXMLLoader loader3 = new FXMLLoader();
+        loader3.setLocation(getClass().getResource("/FXML/routecreator.fxml"));
+        routeCreator = loader3.load();
+
         scene = new Scene(content, 900, 500);
         routeScene = new Scene(contentRoute, 900, 500);
+        routeCreatorScene = new Scene(routeCreator, 900, 500);
 
         //stage properties
         stage.setWidth(900);
@@ -46,6 +51,9 @@ public class PreFlightManager extends Application {
                 break;
             case PILOT_STATS_MENU:
                 break;
+            case ROUTE_CREATOR_MENU:
+                stage.setScene(routeCreatorScene);
+                break;
             case ROUTE_MENU:
                 stage.setScene(routeScene);
                 break;
@@ -55,6 +63,7 @@ public class PreFlightManager extends Application {
     public enum ProgramState {
         MAIN_MENU,
         ROUTE_MENU,
+        ROUTE_CREATOR_MENU,
         PILOT_STATS_MENU;
     }
 }
