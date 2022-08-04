@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: #2c2c2e;" styleClass="loginPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.home_skrobanek.pre.flight.manager.controller.RouteDetailsController">
+   <children>
+      <AnchorPane layoutX="92.0" layoutY="31.0" prefHeight="184.0" prefWidth="900.0" style="-fx-background-color: #333335;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="66.0" layoutY="20.0" text="Route-Details" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="66.0" layoutY="101.0" text="Departure:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="450.0" layoutY="101.0" text="Arrival:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="backButton" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBack" prefHeight="42.0" prefWidth="57.0" style="-fx-background-color: #333335;">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icons/icons8-back-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="161.0" layoutY="96.0" text="Your departure" textFill="#67a46c">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="525.0" layoutY="96.0" text="Your arrival" textFill="#67a46c">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextArea layoutX="78.0" layoutY="294.0" prefHeight="244.0" prefWidth="310.0" />
+      <Button layoutX="78.0" layoutY="666.0" mnemonicParsing="false" text="Convert to PDF" />
+      <Label layoutX="93.0" layoutY="212.0" text="Cycle:" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="161.0" layoutY="207.0" text="n.a" textFill="#67a46c">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="250.0" layoutY="212.0" text="Aircraft:" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="318.0" layoutY="207.0" text="n.a" textFill="#67a46c">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="407.0" layoutY="212.0" text="Aircraft:" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="475.0" layoutY="207.0" text="n.a" textFill="#67a46c">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

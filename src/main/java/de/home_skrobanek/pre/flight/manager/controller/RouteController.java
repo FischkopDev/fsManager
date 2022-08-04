@@ -3,9 +3,11 @@ package de.home_skrobanek.pre.flight.manager.controller;
 import de.home_skrobanek.pre.flight.manager.PreFlightManager;
 import de.home_skrobanek.pre.flight.manager.files.RouteManager;
 import de.home_skrobanek.pre.flight.manager.route.Route;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 public class RouteController {
 
@@ -41,8 +43,23 @@ public class RouteController {
     }
 
     @FXML
-    protected void onSearch(){
-        initialize();
+    protected void onSearchRoute(){
+        Route[] routes = manager.readFromFile();
+        if(routes != null) {
+            for (Route route : routes) {
+                addItemToList(route);
+            }
+        }
+    }
+
+    public static Route route;
+
+    @FXML
+    protected void onRouteSelected(MouseEvent event){
+        if(event.getClickCount() == 2) {
+            route = (Route)routes.getSelectionModel().getSelectedCells().get(0);
+            PreFlightManager.changeState(PreFlightManager.ProgramState.ROUTE_DETAILS);
+        }
     }
 
     TableColumn<Route, String> column1, column2, column3, column4,column5, column6, column7,column8, column9;

@@ -8,6 +8,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import java.awt.event.MouseEvent;
+
 public class RouteCreatorController {
 
     private RouteManager manager;
@@ -26,12 +28,16 @@ public class RouteCreatorController {
 
         flightrules.getItems().add("IFR");
         flightrules.getItems().add("VFR");
+
+        flightrules.getSelectionModel().select(0);
     }
 
     @FXML
     protected void saveRoute(){
         manager.updateFile(new Route(departure.getText(), arrival.getText(),"",cycle.getText(),aircraft.getText(),
                 "",description.getText(),waypoints.getText(),1.0f));
+
+        PreFlightManager.changeState(PreFlightManager.ProgramState.ROUTE_MENU);
     }
 
     @FXML
