@@ -15,6 +15,13 @@ public class RouteManager {
     public RouteManager(){
         gson = new Gson();
         list = new ArrayList<>();
+
+        File file = new File(filename);
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void addNewRoute(Route route){
@@ -25,11 +32,15 @@ public class RouteManager {
         return gson.toJson(list);
     }
 
+    public String convertToJson(ArrayList<Route> liste){
+        return gson.toJson(liste);
+    }
+
     public Route[] convertToList(String json){
         return gson.fromJson(json, Route[].class);
     }
 
-    public void saveInFile(String json){
+    private void saveInFile(String json){
         try{
             FileWriter fw = new FileWriter(new File(filename));
             BufferedWriter bw = new BufferedWriter(fw);
@@ -42,7 +53,20 @@ public class RouteManager {
         }
     }
 
-    public String readFromFile(){
+    private void saveInFile(ArrayList<Route> list){
+        try{
+            FileWriter fw = new FileWriter(new File(filename));
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            fw.write(convertToJson(list));
+
+            bw.close();
+        }catch (IOException ex){
+            ex.printStackTrace();
+        }
+    }
+
+    public Route[] readFromFile(){
         try{
             FileReader fw = new FileReader(new File(filename));
             BufferedReader bw = new BufferedReader(fw);
@@ -52,10 +76,24 @@ public class RouteManager {
                 json += lines;
             }
             bw.close();
-            return json;
+            return convertToList(json);
         }catch (IOException ex){
             ex.printStackTrace();
         }
         return null;
+    }
+
+    public void updateFile(Route route){
+        ArrayList<Route> tmp = new ArrayList<>();
+        Route[] arr = readFromFile();
+        if(arr != null) {
+            for (int i = 0; i < arr.length; i++) {
+                tmp.add(arr[i]);
+            }
+            tmp.add(route);
+        }
+        else
+            tmp.add(route);
+        saveInFile(tmp);
     }
 }

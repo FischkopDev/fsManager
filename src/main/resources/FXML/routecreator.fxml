@@ -25,19 +25,19 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="122.0" layoutY="86.0" prefHeight="24.0" prefWidth="66.0" promptText="EDDH" />
+            <TextField fx:id="departure" layoutX="122.0" layoutY="86.0" prefHeight="24.0" prefWidth="66.0" promptText="EDDH" />
             <Label layoutX="41.0" layoutY="124.0" text="Arrival:" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="122.0" layoutY="121.0" prefHeight="24.0" prefWidth="66.0" promptText="EDDF" />
+            <TextField fx:id="arrival" layoutX="122.0" layoutY="121.0" prefHeight="24.0" prefWidth="66.0" promptText="EDDF" />
             <Label layoutX="211.0" layoutY="89.0" text="Flightrule:" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="288.0" layoutY="86.0" prefHeight="24.0" prefWidth="88.0" promptText="IFR" />
+            <ComboBox fx:id="flightrules" layoutX="288.0" layoutY="86.0" prefHeight="24.0" prefWidth="88.0" promptText="IFR" />
             <Label layoutX="214.0" layoutY="124.0" text="Cycle:" textFill="WHITE">
                <font>
                   <Font size="14.0" />
@@ -48,7 +48,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button layoutX="37.0" layoutY="559.0" mnemonicParsing="false" text="Create new Route" AnchorPane.leftAnchor="37.0" />
+            <Button layoutX="37.0" layoutY="559.0" mnemonicParsing="false" onAction="#saveRoute" text="Create new Route" AnchorPane.leftAnchor="37.0" />
             <Button fx:id="backButton" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBack" prefHeight="42.0" prefWidth="57.0" style="-fx-background-color: #333335;">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
@@ -61,20 +61,20 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </Button>
-            <TextArea layoutX="37.0" layoutY="203.0" prefHeight="183.0" prefWidth="445.0" promptText="EDDF ANEKI EDDT" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="418.0" />
+            <TextArea fx:id="waypoints" layoutX="37.0" layoutY="203.0" prefHeight="183.0" prefWidth="445.0" promptText="EDDF ANEKI EDDT" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="418.0" />
             <Label layoutX="41.0" layoutY="184.0" text="Waypoints:" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextArea layoutX="37.0" layoutY="458.0" prefHeight="101.0" prefWidth="541.0" promptText="This route is special because..." AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="322.0" />
+            <TextArea fx:id="description" layoutX="37.0" layoutY="458.0" prefHeight="101.0" prefWidth="541.0" promptText="This route is special because..." AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="322.0" />
             <Label layoutX="41.0" layoutY="439.0" text="Description:" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="288.0" layoutY="121.0" prefHeight="24.0" prefWidth="66.0" promptText="2207" />
-            <TextField layoutX="479.0" layoutY="86.0" prefHeight="24.0" prefWidth="66.0" promptText="A320" />
+            <TextField fx:id="cycle" layoutX="288.0" layoutY="121.0" prefHeight="24.0" prefWidth="66.0" promptText="2207" />
+            <TextField fx:id="aircraft" layoutX="479.0" layoutY="86.0" prefHeight="24.0" prefWidth="66.0" promptText="A320" />
          </children>
       </AnchorPane>
    </children>

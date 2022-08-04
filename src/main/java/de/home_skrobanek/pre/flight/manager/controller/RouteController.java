@@ -1,11 +1,10 @@
 package de.home_skrobanek.pre.flight.manager.controller;
 
 import de.home_skrobanek.pre.flight.manager.PreFlightManager;
+import de.home_skrobanek.pre.flight.manager.files.RouteManager;
 import de.home_skrobanek.pre.flight.manager.route.Route;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class RouteController {
@@ -16,8 +15,19 @@ public class RouteController {
     @FXML
     private TableView routes;
 
+    private RouteManager manager;
+
     public void initialize(){
+        manager = new RouteManager();
+
         initList();
+
+        Route[] routes = manager.readFromFile();
+        if(routes != null) {
+            for (Route route : routes) {
+                addItemToList(route);
+            }
+        }
     }
 
     @FXML
@@ -28,6 +38,11 @@ public class RouteController {
     @FXML
     protected void onBack(){
         PreFlightManager.changeState(PreFlightManager.ProgramState.MAIN_MENU);
+    }
+
+    @FXML
+    protected void onSearch(){
+        initialize();
     }
 
     TableColumn<Route, String> column1, column2, column3, column4,column5, column6, column7,column8, column9;
