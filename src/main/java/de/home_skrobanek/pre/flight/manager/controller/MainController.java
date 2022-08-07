@@ -26,6 +26,9 @@ public class MainController {
         MenuObject m2 = new MenuObject("Pilot-Stats","Write down your flights\nand find additional\ninformation","", null);
         contentPane.getChildren().add(m2.initialize());
 
+        MenuObject liveryInstaller = new MenuObject("Livery Installer","Installer for\nLiveries with some\nadditional information","", null);
+        contentPane.getChildren().add(liveryInstaller.initialize());
+
         MenuObject.calculatePosition();
     }
 }

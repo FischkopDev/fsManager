@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: #2c2c2e;" styleClass="loginPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.home_skrobanek.pre.flight.manager.controller.RouteDetailsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: #2c2c2e;" styleClass="loginPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.home_skrobanek.pre.flight.manager.controller.RouteDetailsController">
    <children>
       <AnchorPane layoutX="92.0" layoutY="31.0" prefHeight="184.0" prefWidth="900.0" style="-fx-background-color: #333335;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -40,26 +40,26 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </Button>
-            <Label layoutX="161.0" layoutY="96.0" text="Your departure" textFill="#67a46c">
+            <Label fx:id="departure" layoutX="161.0" layoutY="96.0" text="Your departure" textFill="#67a46c">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="525.0" layoutY="96.0" text="Your arrival" textFill="#67a46c">
+            <Label fx:id="arrival" layoutX="525.0" layoutY="96.0" text="Your arrival" textFill="#67a46c">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <TextArea layoutX="78.0" layoutY="294.0" prefHeight="244.0" prefWidth="310.0" />
+      <TextArea fx:id="airways" layoutX="78.0" layoutY="294.0" prefHeight="244.0" prefWidth="310.0" />
       <Button layoutX="78.0" layoutY="666.0" mnemonicParsing="false" text="Convert to PDF" />
       <Label layoutX="93.0" layoutY="212.0" text="Cycle:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="161.0" layoutY="207.0" text="n.a" textFill="#67a46c">
+      <Label fx:id="cycle" layoutX="149.0" layoutY="207.0" text="n.a" textFill="#67a46c">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -69,17 +69,17 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="318.0" layoutY="207.0" text="n.a" textFill="#67a46c">
+      <Label fx:id="aircraft" layoutX="318.0" layoutY="207.0" text="n.a" textFill="#67a46c">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="407.0" layoutY="212.0" text="Aircraft:" textFill="WHITE">
+      <Label fx:id="flighrules" layoutX="407.0" layoutY="212.0" text="Flightrules:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="475.0" layoutY="207.0" text="n.a" textFill="#67a46c">
+      <Label fx:id="flightrules" layoutX="499.0" layoutY="207.0" text="n.a" textFill="#67a46c">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

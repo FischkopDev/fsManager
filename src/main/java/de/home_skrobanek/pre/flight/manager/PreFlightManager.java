@@ -61,6 +61,7 @@ public class PreFlightManager extends Application {
                 break;
             case ROUTE_DETAILS:
                 stage.setScene(routeDetailsScene);
+                break;
             case ROUTE_MENU:
                 stage.setScene(routeScene);
                 break;

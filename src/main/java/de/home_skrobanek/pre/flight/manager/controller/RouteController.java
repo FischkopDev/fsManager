@@ -52,12 +52,10 @@ public class RouteController {
         }
     }
 
-    public static Route route;
-
     @FXML
     protected void onRouteSelected(MouseEvent event){
+        RouteDetailsController.route = (Route)routes.getSelectionModel().getSelectedItem();
         if(event.getClickCount() == 2) {
-            route = (Route)routes.getSelectionModel().getSelectedCells().get(0);
             PreFlightManager.changeState(PreFlightManager.ProgramState.ROUTE_DETAILS);
         }
     }
