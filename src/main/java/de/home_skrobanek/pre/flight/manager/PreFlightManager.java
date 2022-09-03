@@ -75,4 +75,8 @@ public class PreFlightManager extends Application {
         ROUTE_CREATOR_MENU,
         PILOT_STATS_MENU;
     }
+
+    public static Scene getRouteDetailScene(){
+        return routeDetailsScene;
+    }
 }

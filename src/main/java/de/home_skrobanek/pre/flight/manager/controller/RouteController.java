@@ -55,8 +55,24 @@ public class RouteController {
     @FXML
     protected void onRouteSelected(MouseEvent event){
         RouteDetailsController.route = (Route)routes.getSelectionModel().getSelectedItem();
+        Route route = (Route)routes.getSelectionModel().getSelectedItem();
         if(event.getClickCount() == 2) {
             PreFlightManager.changeState(PreFlightManager.ProgramState.ROUTE_DETAILS);
+            Label dep = (Label) PreFlightManager.getRouteDetailScene().lookup("#departure");
+            dep.setText(route.getDep());
+
+            Label arrival = (Label) PreFlightManager.getRouteDetailScene().lookup("#arrival");
+            arrival.setText(route.getArr());
+
+            Label cycle = (Label) PreFlightManager.getRouteDetailScene().lookup("#cycle");
+            cycle.setText(route.getCycle());
+
+            Label flightrules = (Label) PreFlightManager.getRouteDetailScene().lookup("#flightrules");
+            flightrules.setText(route.getFlightrules());
+
+            TextArea airways = (TextArea) PreFlightManager.getRouteDetailScene().lookup("#airways");
+            airways.setText(route.getWayPoints());
+
         }
     }
 

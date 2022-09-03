@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: #2c2c2e;" styleClass="loginPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.home_skrobanek.pre.flight.manager.controller.RouteDetailsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: #2c2c2e;" styleClass="loginPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.home_skrobanek.pre.flight.manager.controller.RouteDetailsController">
    <children>
       <AnchorPane layoutX="92.0" layoutY="31.0" prefHeight="184.0" prefWidth="900.0" style="-fx-background-color: #333335;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -52,7 +52,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <TextArea fx:id="airways" layoutX="78.0" layoutY="294.0" prefHeight="244.0" prefWidth="310.0" />
+      <TextArea fx:id="airways" editable="false" layoutX="78.0" layoutY="294.0" prefHeight="244.0" prefWidth="563.0" />
       <Button layoutX="78.0" layoutY="666.0" mnemonicParsing="false" text="Convert to PDF" />
       <Label layoutX="93.0" layoutY="212.0" text="Cycle:" textFill="WHITE">
          <font>

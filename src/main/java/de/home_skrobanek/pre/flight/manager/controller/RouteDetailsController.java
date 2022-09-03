@@ -19,11 +19,7 @@ public class RouteDetailsController {
 
     public void initialize(){
         if(route != null){
-            departure.setText(route.getDep());
-            arrival.setText(route.getArr());
-            cycle.setText(route.getCycle());
-            flightrules.setText(route.getFlightrules());
-            airways.setText(route.getWayPoints());
+
        }
         else
             System.err.println("Error while selecting a route");
